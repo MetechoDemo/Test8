@@ -1,0 +1,29 @@
+minimum_cumulusci_version: '3.74.0'
+project:
+    name: Test8
+    package:
+        name: Test8
+        namespace: d2x
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Test8/tests
+            options:
+                outputdir: robot/Test8/results
+
+    robot_testdoc:
+        options:
+            path: robot/Test8/tests
+            output: robot/Test8/doc/Test8_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
